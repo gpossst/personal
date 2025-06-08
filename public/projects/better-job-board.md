@@ -1,0 +1,10 @@
+# Robin
+
+This was right after the release of [Interview Coder](https://www.interviewcoder.co/). I wanted to find a way for people like me, who truly love programming, problem solving, and learning to get a leg up over those who were willing to cheat their way into a job. The goal was to let users create a single profile with all of their information. We'd scan their repositories for relevant information, such as technologies or languages, and recommend them jobs that fit their skillset. From there, all they'd have to do is check an interested box for a job listing. Our algorithms would recommend candidates to recruiters based on their filters and preferences, and recruiters could one-click contact potential employees. This system could save candidates time and companies money, and make the entire job market much more efficient.
+
+Overall, I really liked this idea. It got me thinking much more about my approach to data and using algorithms to serve that data to users. I think there's a possibility I return to this in the future, as recruiting in the tech space sucks right now. 
+
+## Links
+- Repository is private for now
+
+###  April 2025

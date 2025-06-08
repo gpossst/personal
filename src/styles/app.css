@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    color-scheme: light dark;
+  }
+
+  * {
+    @apply border-gray-200 dark:border-gray-800;
+  }
+
+  html,
+  body {
+    @apply text-gray-900 bg-gray-50 dark:bg-gray-950 dark:text-gray-200;
+  }
+
+  .using-mouse * {
+    outline: none !important;
+  }
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    color-scheme: light dark;
+  }
+
+  * {
+    @apply border-gray-200 dark:border-gray-800;
+  }
+
+  html,
+  body {
+    @apply text-gray-900 bg-gray-50 dark:bg-gray-950 dark:text-gray-200;
+  }
+
+  .using-mouse * {
+    outline: none !important;
+  }
+}
+
+/* View Transitions */
+::view-transition-old(nav-home),
+::view-transition-new(nav-home),
+::view-transition-old(nav-blog),
+::view-transition-new(nav-blog),
+::view-transition-old(nav-projects),
+::view-transition-new(nav-projects) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+::view-transition-old(nav-underline-home),
+::view-transition-new(nav-underline-home),
+::view-transition-old(nav-underline-blog),
+::view-transition-new(nav-underline-blog),
+::view-transition-old(nav-underline-projects),
+::view-transition-new(nav-underline-projects) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+/* Add a subtle transition for the navigation items */
+::view-transition-old(nav-home),
+::view-transition-old(nav-blog),
+::view-transition-old(nav-projects) {
+  opacity: 1;
+}
+
+::view-transition-new(nav-home),
+::view-transition-new(nav-blog),
+::view-transition-new(nav-projects) {
+  opacity: 1;
+}
+
+/* Add this to your existing view transition styles */
+::view-transition-old(site-title),
+::view-transition-new(site-title) {
+  animation: none;
+  mix-blend-mode: normal;
+}

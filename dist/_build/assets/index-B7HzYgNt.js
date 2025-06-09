@@ -1,0 +1,1 @@
+import{j as e}from"./client-B0jcN1F3.js";import{N as t}from"./NavBar-BBktHVEZ.js";const s=function(){return e.jsx("div",{className:"flex-1 flex flex-col items-center justify-center h-full",children:e.jsx(t,{})})};export{s as component};

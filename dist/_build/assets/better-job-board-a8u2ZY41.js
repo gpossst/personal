@@ -1,0 +1,8 @@
+import{j as e}from"./client-B0jcN1F3.js";import{u as o}from"./YouTube.esm-CnB3KR1q.js";function r(n){const t={a:"a",h1:"h1",h2:"h2",h3:"h3",li:"li",p:"p",ul:"ul",...o(),...n.components};return e.jsxs(e.Fragment,{children:[e.jsx(t.h1,{children:"Better Job Board"}),`
+`,e.jsxs(t.p,{children:["This was right after the release of ",e.jsx(t.a,{href:"https://www.interviewcoder.co/",children:"Interview Coder"}),". I wanted to find a way for people like me, who truly love programming, problem solving, and learning to get a leg up over those who were willing to cheat their way into a job. The goal was to let users create a single profile with all of their information. We'd scan their repositories for relevant information, such as technologies or languages, and recommend them jobs that fit their skillset. From there, all they'd have to do is check an interested box for a job listing. Our algorithms would recommend candidates to recruiters based on their filters and preferences, and recruiters could one-click contact potential employees. This system could save candidates time and companies money, and make the entire job market much more efficient."]}),`
+`,e.jsx(t.p,{children:"Overall, I really liked this idea. It got me thinking much more about my approach to data and using algorithms to serve that data to users. I think there's a possibility I return to this in the future, as recruiting in the tech space sucks right now."}),`
+`,e.jsx(t.h2,{children:"Links"}),`
+`,e.jsxs(t.ul,{children:[`
+`,e.jsx(t.li,{children:"Repository is private for now"}),`
+`]}),`
+`,e.jsx(t.h3,{children:"April 2025"})]})}function a(n={}){const{wrapper:t}={...o(),...n.components};return t?e.jsx(t,{...n,children:e.jsx(r,{...n})}):r(n)}export{a as default};

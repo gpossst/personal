@@ -1,0 +1,201 @@
+{
+  "/Users/garrett/Code/personal/src/styles/app.css": {
+    "file": "assets/app-VJUi8Zga.css",
+    "src": "/Users/garrett/Code/personal/src/styles/app.css"
+  },
+  "_NavBar-BBktHVEZ.js": {
+    "file": "assets/NavBar-BBktHVEZ.js",
+    "name": "NavBar",
+    "imports": [
+      "_client-B0jcN1F3.js"
+    ]
+  },
+  "_YouTube.esm-CnB3KR1q.js": {
+    "file": "assets/YouTube.esm-CnB3KR1q.js",
+    "name": "YouTube.esm",
+    "imports": [
+      "_client-B0jcN1F3.js"
+    ]
+  },
+  "_client-B0jcN1F3.js": {
+    "file": "assets/client-B0jcN1F3.js",
+    "name": "client",
+    "dynamicImports": [
+      "src/routes/projects.tsx?tsr-split=component",
+      "src/routes/_pathlessLayout.tsx?tsr-split=component",
+      "src/routes/index.tsx?tsr-split=component",
+      "src/routes/blog.index.tsx?tsr-split=component",
+      "src/routes/blog.$postId.tsx?tsr-split=component"
+    ],
+    "assets": [
+      "assets/app-VJUi8Zga.css"
+    ]
+  },
+  "_posts-CxGuEOV-.js": {
+    "file": "assets/posts-CxGuEOV-.js",
+    "name": "posts"
+  },
+  "src/content/projects/better-job-board.mdx": {
+    "file": "assets/better-job-board-a8u2ZY41.js",
+    "name": "better-job-board",
+    "src": "src/content/projects/better-job-board.mdx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_client-B0jcN1F3.js",
+      "_YouTube.esm-CnB3KR1q.js"
+    ]
+  },
+  "src/content/projects/clariphoto.mdx": {
+    "file": "assets/clariphoto-B7kq8c_p.js",
+    "name": "clariphoto",
+    "src": "src/content/projects/clariphoto.mdx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_client-B0jcN1F3.js",
+      "_YouTube.esm-CnB3KR1q.js"
+    ]
+  },
+  "src/content/projects/national-parks.mdx": {
+    "file": "assets/national-parks-MdZNsuuo.js",
+    "name": "national-parks",
+    "src": "src/content/projects/national-parks.mdx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_client-B0jcN1F3.js",
+      "_YouTube.esm-CnB3KR1q.js"
+    ]
+  },
+  "src/content/projects/playlist-transfers.mdx": {
+    "file": "assets/playlist-transfers-DXVduJJG.js",
+    "name": "playlist-transfers",
+    "src": "src/content/projects/playlist-transfers.mdx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_client-B0jcN1F3.js",
+      "_YouTube.esm-CnB3KR1q.js"
+    ]
+  },
+  "src/content/projects/reformify.mdx": {
+    "file": "assets/reformify-Rng2GYbT.js",
+    "name": "reformify",
+    "src": "src/content/projects/reformify.mdx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_client-B0jcN1F3.js",
+      "_YouTube.esm-CnB3KR1q.js"
+    ]
+  },
+  "src/content/projects/robin.mdx": {
+    "file": "assets/robin-_ipd6SOg.js",
+    "name": "robin",
+    "src": "src/content/projects/robin.mdx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_client-B0jcN1F3.js",
+      "_YouTube.esm-CnB3KR1q.js"
+    ]
+  },
+  "src/content/projects/spontaneous.mdx": {
+    "file": "assets/spontaneous-D3kSjOde.js",
+    "name": "spontaneous",
+    "src": "src/content/projects/spontaneous.mdx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_client-B0jcN1F3.js",
+      "_YouTube.esm-CnB3KR1q.js"
+    ]
+  },
+  "src/content/projects/sports-prediction-ml-models.mdx": {
+    "file": "assets/sports-prediction-ml-models-8PfyaNUe.js",
+    "name": "sports-prediction-ml-models",
+    "src": "src/content/projects/sports-prediction-ml-models.mdx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_client-B0jcN1F3.js",
+      "_YouTube.esm-CnB3KR1q.js"
+    ]
+  },
+  "src/content/projects/the-odin-project.mdx": {
+    "file": "assets/the-odin-project-CnyWalWm.js",
+    "name": "the-odin-project",
+    "src": "src/content/projects/the-odin-project.mdx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_client-B0jcN1F3.js",
+      "_YouTube.esm-CnB3KR1q.js"
+    ]
+  },
+  "src/routes/_pathlessLayout.tsx?tsr-split=component": {
+    "file": "assets/_pathlessLayout-10oFQnxA.js",
+    "name": "_pathlessLayout",
+    "src": "src/routes/_pathlessLayout.tsx?tsr-split=component",
+    "isDynamicEntry": true,
+    "imports": [
+      "_client-B0jcN1F3.js"
+    ]
+  },
+  "src/routes/blog.$postId.tsx?tsr-split=component": {
+    "file": "assets/blog._postId-D4FlyBla.js",
+    "name": "blog._postId",
+    "src": "src/routes/blog.$postId.tsx?tsr-split=component",
+    "isDynamicEntry": true,
+    "imports": [
+      "_client-B0jcN1F3.js",
+      "_YouTube.esm-CnB3KR1q.js",
+      "_NavBar-BBktHVEZ.js",
+      "_posts-CxGuEOV-.js"
+    ]
+  },
+  "src/routes/blog.index.tsx?tsr-split=component": {
+    "file": "assets/blog.index-D62Y1Gxk.js",
+    "name": "blog.index",
+    "src": "src/routes/blog.index.tsx?tsr-split=component",
+    "isDynamicEntry": true,
+    "imports": [
+      "_client-B0jcN1F3.js",
+      "_NavBar-BBktHVEZ.js",
+      "_posts-CxGuEOV-.js"
+    ]
+  },
+  "src/routes/index.tsx?tsr-split=component": {
+    "file": "assets/index-B7HzYgNt.js",
+    "name": "index",
+    "src": "src/routes/index.tsx?tsr-split=component",
+    "isDynamicEntry": true,
+    "imports": [
+      "_client-B0jcN1F3.js",
+      "_NavBar-BBktHVEZ.js"
+    ]
+  },
+  "src/routes/projects.tsx?tsr-split=component": {
+    "file": "assets/projects-BOHMQAnB.js",
+    "name": "projects",
+    "src": "src/routes/projects.tsx?tsr-split=component",
+    "isDynamicEntry": true,
+    "imports": [
+      "_client-B0jcN1F3.js",
+      "_NavBar-BBktHVEZ.js",
+      "_YouTube.esm-CnB3KR1q.js"
+    ],
+    "dynamicImports": [
+      "src/content/projects/better-job-board.mdx",
+      "src/content/projects/clariphoto.mdx",
+      "src/content/projects/national-parks.mdx",
+      "src/content/projects/playlist-transfers.mdx",
+      "src/content/projects/reformify.mdx",
+      "src/content/projects/robin.mdx",
+      "src/content/projects/spontaneous.mdx",
+      "src/content/projects/sports-prediction-ml-models.mdx",
+      "src/content/projects/the-odin-project.mdx"
+    ]
+  },
+  "virtual:$vinxi/handler/client": {
+    "file": "assets/client-gaFGRWv6.js",
+    "name": "client",
+    "src": "virtual:$vinxi/handler/client",
+    "isEntry": true,
+    "imports": [
+      "_client-B0jcN1F3.js"
+    ]
+  }
+}

@@ -4,7 +4,8 @@ import Timeline from "~/components/Timeline";
 import { useState, useEffect } from "react";
 import { PacmanLoader } from "react-spinners";
 import { FaArrowLeft } from "react-icons/fa";
-import MDXContent from "~/components/MDXContent";
+import { MDXProvider } from "@mdx-js/react";
+import YouTube from "react-youtube";
 
 export const Route = createFileRoute("/projects")({
   component: RouteComponent,
@@ -13,30 +14,30 @@ export const Route = createFileRoute("/projects")({
 const projects = [
   {
     name: "The Odin Project",
-    location: "/src/content/projects/the-odin-project.mdx",
+    location: "the-odin-project",
   },
-  { name: "Clariphoto", location: "/src/content/projects/clariphoto.mdx" },
+  { name: "Clariphoto", location: "clariphoto" },
   {
     name: "Playlist Transfers",
-    location: "/src/content/projects/playlist-transfers.mdx",
+    location: "playlist-transfers",
   },
-  { name: "Reformify", location: "/src/content/projects/reformify.mdx" },
+  { name: "Reformify", location: "reformify" },
   {
     name: "National Parks",
-    location: "/src/content/projects/national-parks.mdx",
+    location: "national-parks",
   },
-  { name: "Robin (Unfinished)", location: "/src/content/projects/robin.mdx" },
+  { name: "Robin (Unfinished)", location: "robin" },
   {
     name: "Better Job Board (Unfinished)",
-    location: "/src/content/projects/better-job-board.mdx",
+    location: "better-job-board",
   },
   {
     name: "Sports Prediction ML Models",
-    location: "/src/content/projects/sports-prediction-ml-models.mdx",
+    location: "sports-prediction-ml-models",
   },
   {
     name: "Spontaneous",
-    location: "/src/content/projects/spontaneous.mdx",
+    location: "spontaneous",
   },
 ];
 
@@ -50,11 +51,33 @@ const hashToProject = (hash: string) => {
   return projects.find((p) => projectToHash(p.name) === hash)?.name || null;
 };
 
+// Dynamic import function for MDX files
+const importMDX = async (location: string) => {
+  try {
+    const module = await import(`../content/projects/${location}.mdx`);
+    return module.default;
+  } catch (error) {
+    console.error(`Failed to import MDX file: ${location}`, error);
+    return null;
+  }
+};
+
+const components = {
+  YouTube: (props: any) => (
+    <div className="w-full aspect-video">
+      <YouTube {...props} width="100%" height="100%" />
+    </div>
+  ),
+};
+
 function RouteComponent() {
-  const [markdownContent, setMarkdownContent] = useState<string>("");
+  const [MDXComponent, setMDXComponent] = useState<React.ComponentType | null>(
+    null
+  );
+  const [currentProject, setCurrentProject] = useState<string>("");
   const [newHash, setNewHash] = useState<boolean>(false);
 
-  const hasContent = markdownContent !== "";
+  const hasContent = MDXComponent !== null;
 
   // Handle URL hash on component mount
   useEffect(() => {
@@ -68,8 +91,8 @@ function RouteComponent() {
   }, []);
 
   const handleOpenProject = async (project: string) => {
-    const projectLocation = projects.find((p) => p.name === project)?.location;
-    if (!projectLocation) {
+    const projectData = projects.find((p) => p.name === project);
+    if (!projectData) {
       return;
     }
 
@@ -77,16 +100,18 @@ function RouteComponent() {
     const hash = projectToHash(project);
     window.history.pushState(null, "", `#${hash}`);
 
-    const md = await fetch(projectLocation);
-    const mdText = await md.text();
-
-    setMarkdownContent(mdText);
-    window.scrollTo({ top: 0, behavior: "smooth" });
-    setNewHash(true);
+    const MDXComponent = await importMDX(projectData.location);
+    if (MDXComponent) {
+      setMDXComponent(() => MDXComponent);
+      setCurrentProject(project);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      setNewHash(true);
+    }
   };
 
   const handleCloseProject = () => {
-    setMarkdownContent("");
+    setMDXComponent(null);
+    setCurrentProject("");
     // Clear the hash from URL
     window.history.pushState(null, "", window.location.pathname);
   };
@@ -99,13 +124,11 @@ function RouteComponent() {
           <Timeline handleOpenProject={handleOpenProject} />
         </div>
         <div className="flex-1 md:p-0 px-8">
-          {markdownContent ? (
+          {MDXComponent ? (
             <div className="prose dark:prose-invert w-full md:w-auto md:max-w-3xl md:pt-8 pb-12">
-              <MDXContent
-                link={"/projects"}
-                newHash={newHash}
-                setNewHash={setNewHash}
-              />
+              <MDXProvider components={components}>
+                <MDXComponent />
+              </MDXProvider>
             </div>
           ) : (
             <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col gap-8 items-center justify-center">

@@ -198,9 +198,10 @@ export default function Timeline({
             <div>
               <h3
                 className="text-lg font-semibold flex items-center gap-2 text-red-500 cursor-pointer whitespace-nowrap"
-                onClick={() =>
-                  handleOpenProject("Better Job Board (Unfinished)")
-                }
+                onClick={() => {
+                  handleOpenProject("Better Job Board (Unfinished)");
+                  console.log("clicked");
+                }}
               >
                 Better Job Board (Unfinished){" "}
                 <span className="">

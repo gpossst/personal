@@ -12,7 +12,7 @@ function RouteComponent() {
     <div className="flex flex-col items-center h-full w-full">
       <NavBar />
       <div className="max-w-3xl w-full flex-1 justify-between px-8 flex flex-col gap-8 md:pt-8">
-        <MDXContent />
+        <MDXContent link={"/blog/$postId"} />
         <RandomPost />
       </div>
     </div>

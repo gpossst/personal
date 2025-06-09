@@ -66,7 +66,7 @@ function NavBarItem({
   onNavigate: (to: string) => void;
 }) {
   return (
-    <div className="flex md:items-center group">
+    <div className="group md:items-center">
       <button
         onClick={() => onNavigate(link)}
         className="text-red-500 text-lg"
@@ -77,7 +77,7 @@ function NavBarItem({
         {text}
       </button>
       <div
-        className="w-0 group-hover:w-full transition-all duration-300 bg-red-500 h-1"
+        className="w-full h-0 md:h-1 bg-red-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
         style={{
           viewTransitionName: `nav-underline-${text.toLowerCase()}`,
         }}

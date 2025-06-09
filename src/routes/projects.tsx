@@ -13,27 +13,30 @@ export const Route = createFileRoute("/projects")({
 const projects = [
   {
     name: "The Odin Project",
-    location: "/public/projects/the-odin-project.mdx",
+    location: "/src/content/projects/the-odin-project.mdx",
   },
-  { name: "Clariphoto", location: "/public/projects/clariphoto.mdx" },
+  { name: "Clariphoto", location: "/src/content/projects/clariphoto.mdx" },
   {
     name: "Playlist Transfers",
-    location: "/public/projects/playlist-transfers.mdx",
+    location: "/src/content/projects/playlist-transfers.mdx",
   },
-  { name: "Reformify", location: "/public/projects/reformify.mdx" },
-  { name: "National Parks", location: "/public/projects/national-parks.mdx" },
-  { name: "Robin (Unfinished)", location: "/public/projects/robin.mdx" },
+  { name: "Reformify", location: "/src/content/projects/reformify.mdx" },
+  {
+    name: "National Parks",
+    location: "/src/content/projects/national-parks.mdx",
+  },
+  { name: "Robin (Unfinished)", location: "/src/content/projects/robin.mdx" },
   {
     name: "Better Job Board (Unfinished)",
-    location: "/public/projects/better-job-board.mdx",
+    location: "/src/content/projects/better-job-board.mdx",
   },
   {
     name: "Sports Prediction ML Models",
-    location: "/public/projects/sports-prediction-ml-models.mdx",
+    location: "/src/content/projects/sports-prediction-ml-models.mdx",
   },
   {
     name: "Spontaneous",
-    location: "/public/projects/spontaneous.mdx",
+    location: "/src/content/projects/spontaneous.mdx",
   },
 ];
 

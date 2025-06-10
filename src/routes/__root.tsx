@@ -27,6 +27,10 @@ export const Route = createRootRoute({
         title: "Garrett Post",
         description: `Garrett Post is a CS student at Virginia Tech. He is interested in software development, machine learning, and artificial intelligence.`,
       }),
+      {
+        property: "og:image",
+        content: "/og-image.png",
+      },
     ],
     links: [
       { rel: "stylesheet", href: appCss },

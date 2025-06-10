@@ -79,7 +79,7 @@ function RootComponent() {
 
 function RootDocument({ children }: { children: React.ReactNode }) {
   return (
-    <html className="flex flex-1 min-h-screen min-w-full">
+    <html lang="en" className="flex flex-1 min-h-screen min-w-full">
       <head>
         <HeadContent />
       </head>

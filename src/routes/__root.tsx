@@ -24,9 +24,8 @@ export const Route = createRootRoute({
         content: "width=device-width, initial-scale=1",
       },
       ...seo({
-        title:
-          "TanStack Start | Type-Safe, Client-First, Full-Stack React Framework",
-        description: `TanStack Start is a type-safe, client-first, full-stack React framework. `,
+        title: "Garrett",
+        description: `Garrett Post is a CS student at Virginia Tech. He is interested in software development, machine learning, and artificial intelligence.`,
       }),
     ],
     links: [

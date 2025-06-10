@@ -4,6 +4,8 @@ import RandomPost from "~/components/RandomPost";
 import { useState, useEffect } from "react";
 import { MDXProvider } from "@mdx-js/react";
 import YouTube from "react-youtube";
+import { seo } from "~/utils/seo";
+import blogPosts from "~/utils/posts";
 
 const components = {
   YouTube: (props: any) => (
@@ -26,6 +28,19 @@ const importBlogPost = async (postId: string) => {
 
 export const Route = createFileRoute("/blog/$postId")({
   component: RouteComponent,
+  head: ({ params }) => {
+    const post = blogPosts.find((p) => p.link === params.postId);
+    return {
+      meta: [
+        ...seo({
+          title: post
+            ? `${post.title} | Garrett Post`
+            : "Blog Post | Garrett Post",
+          description: "A blog post by Garrett Post",
+        }),
+      ],
+    };
+  },
 });
 
 function RouteComponent() {

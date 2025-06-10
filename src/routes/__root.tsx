@@ -24,7 +24,7 @@ export const Route = createRootRoute({
         content: "width=device-width, initial-scale=1",
       },
       ...seo({
-        title: "Garrett",
+        title: "Garrett Post",
         description: `Garrett Post is a CS student at Virginia Tech. He is interested in software development, machine learning, and artificial intelligence.`,
       }),
     ],

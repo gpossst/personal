@@ -6,9 +6,18 @@ import { PacmanLoader } from "react-spinners";
 import { FaArrowLeft } from "react-icons/fa";
 import { MDXProvider } from "@mdx-js/react";
 import YouTube from "react-youtube";
+import { seo } from "~/utils/seo";
 
 export const Route = createFileRoute("/projects")({
   component: RouteComponent,
+  head: () => ({
+    meta: [
+      ...seo({
+        title: "Projects | Garrett Post",
+        description: "A list of projects by Garrett Post",
+      }),
+    ],
+  }),
 });
 
 const projects = [

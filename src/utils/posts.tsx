@@ -11,6 +11,12 @@ const blogPosts = [
     link: "ai-ideal-future",
     private: false,
   },
+  {
+    title: "Making an AI Model for Sports Betting",
+    date: "2025-07-20",
+    link: "creating-nba-ai",
+    private: false,
+  },
 ];
 
 export const recentPosts = blogPosts

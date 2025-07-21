@@ -1,0 +1,76 @@
+# Creating an NBA AI: Sports betting with Machine Learning
+
+#### This post is the basic script for a video I'm making on the topic. When it's finished, I'll link it here. All to say, don't judge the quality of writing.
+
+### July 20, 2025
+
+AI - it's everywhere. The most common use case is as a chatbot, but it can do so much more. Netflix's recommendation algorithm? AI. Facial recognition? AI. Betting odds? AI. Yup, sportsbooks use AI to determine the odds for games, fantasy odds, and more, but they're not just asking ChatGPT. And so I wondered, what if I could make an AI that was good enough to make money off of the odds? Here's how I started.
+
+## Data Cleaning
+
+This process took as long as writing the code for the model itself. After doing as little research as possible, I found this dataset online called "NBA Database" with 65000 rows in a "games" table with a bunch of data.
+
+I started with the easy part - removing any empty cells or duplicate games, they'd only be in the way.
+
+Then, I went through, game by game, season by season, and tracked each teams per-game stats. If both teams had at least ten games worth of stats accumulated, I'd take those stats, and which team won, and save them for my final dataset.
+
+I then took it one step further and took that same data for specifically home and away for each team.
+
+Our final dataset was a list of games, which held a bunch of stats: points per game, rebounds, steals, blocks — basically everything I thought was reasonable enough for me to find for current teams with a quick google search. As well as a column that held 1 if the home team won, and 0 if the home team lost. After everything, we had **31,624 games** to train and test on.
+
+## Neural Network Basics
+
+Now, we need to talk about brains. No, not that type of brain, this type of brain. They're actually not that different. This is a neural network, a model that was developed by trying to replicate the abilities of the human brain. They're very good at pattern recognition and they're one of the many kinds of models that the sportsbooks themselves use.
+
+Without complicating it too much, we've got layers of neurons, and the outputs of each neuron of one layer is passed into the next layer. Each neuron has a weight, and each layer has a bias, both of which determine the strength and influence of a neuron. All of these values are used to calculate the output of a particular neuron. You can think of each of these, weights and biases, as knobs.
+
+Basically think of the whole network as a function that takes inputs and produces outputs, we then try to adjust those knobs to improve the accuracy of our output.
+
+There's more complexity there, but I know your attention is already fading. Our model has **3 layers with 64 neurons each**, which all feed into a final neuron that has a value from 0 to 1. For simplicity sake, I'll be interpreting that 0-1 value as a percentage chance that the home team wins.
+
+I randomly split the data into training and test sets, with the training set being about 4 times larger than the test set. The training process basically consists of passing through our data, calculating how incorrect it is, and using some complicated algorithms to calculate the adjustments we need to make to those knobs I mentioned earlier. If you're interested in my full implementation, I've linked the repository below.
+
+Our most successful model was accurate on the test data about **⅔ of the time**. That might not sound great, but the industry averages from 60-80% accuracy, which makes my model about average. It's also way better than I could predict.
+
+## Results
+
+And so, I threw in $10 and got ready to bet.
+
+I didn't complete the model until pretty deep into the playoffs. The first game I bet on was **Timberwolves @ Thunder** in OKC. After going through the absurd process of adding 78 values to a csv file, one by one, taken from the NBA's stats website, which I used that as my input.
+
+And there it was, the model predicted that, without a doubt, **100%**, OKC would win. At first, I was sure there was a problem with the model, or how I was interpreting its output, but it seems like these particular stats line up to mean OKC would 100% win. The model's not perfect, but I looked at the teams stats, and OKC was insanely good at home this season. On the other hand, Minnesota was noticeably worse on the road. My guess is that the model found patterns in home and away teams, and predicted that those patterns paired with the patterns from these teams this season have ALWAYS historically led to a home win.
+
+So, I slapped $2 on the moneyline and...
+
+The next game - **Knicks - Pacers** - 100% Knicks for $1.11
+
+It was making me uncomfortable that I was only getting 100% chances of winning. I mean, it was always right, but it was also always picking the home team. So I dove in a bit and found that the data needed to be normalized.
+
+This is how things get skewed - NBA teams average about 110 points per game. They also average about 40 rebounds per game. To make sure points don't arbitrarily overpower rebounds, just because the values are more, we normalize them. Basically we scale them to a similar range to ensure there isn't unnecessary bias towards one stat. Now, this doesn't mean that the AI can't determine that one stat is more valuable, but it doesn't predispose it to thinking that way.
+
+So, after a few lines of code, I moved on.
+
+Next game - **Pacers Knicks** in indiana **58%** that's more like it.
+
+At this point, I'm up a couple dollars, feeling pretty good going into the finals.
+
+- **Game one** - the model chose OKC
+- **Game two** - the model chose OKC
+- **Game three** - the model chose OKC
+- **Game four** - the model chose, yup, OKC
+
+You get the pattern. For each finals game, the model chose OKC, because statistically they were the better team.
+
+So, instead of showing you a bunch more clips from the games, here's the final outcome:
+
+At one point I was up **$2.79**, which, had I stopped, would have been a **30% profit**. Overall, I think trading with AI could actually be profitable, but only if you were smart about it.
+
+## Lessons Learned
+
+For one, the data that the NBA tracks is completely separate between season and playoffs, making getting total stats more difficult. This compounds with the fact that playoff basketball is totally different from in-season play. It's generally slower and more conservative, making predictions almost inherently inaccurate.
+
+Another problem with my strategy here is that I was betting on every single game, whether the model predicted with high certainty or not. I would **NOT** do that in the future. I think there's a strategy to be developed by calculating the expected values of games using the model's odds as well as the sportsbooks' odds.
+
+## Conclusion
+
+Overall, it was an insane experience, and super fun to work on. I've started working on another model for a more data-driven sport, so if you're interested in another video on that let me know. Subscribe so I'm motivated to make more of these and thanks for watching!

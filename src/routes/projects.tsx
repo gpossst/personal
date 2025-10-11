@@ -48,6 +48,10 @@ const projects = [
     name: "Spontaneous",
     location: "spontaneous",
   },
+  {
+    name: "Opentern",
+    location: "opentern",
+  },
 ];
 
 // Helper function to convert project name to URL-friendly hash

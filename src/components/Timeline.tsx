@@ -238,6 +238,26 @@ export default function Timeline({
                 <SiNumpy className="text-gray-500 w-8 h-8" />
               </div>
             </div>
+            <div>
+              <h3
+                className="text-lg font-semibold flex items-center gap-2 text-red-500 cursor-pointer whitespace-nowrap"
+                onClick={() => handleOpenProject("Opentern")}
+              >
+                Opentern{" "}
+                <span className="">
+                  <Terminal />
+                </span>
+              </h3>
+              <p className="mb-2 text-base font-normal text-gray-500 dark:text-gray-400">
+                Simplifying job application process
+              </p>
+              <div className="flex flex-row gap-2">
+                <FaReact className="text-gray-500 w-8 h-8" />
+                <SiNextdotjs className="text-gray-500 w-8 h-8" />
+                <SiTailwindcss className="text-gray-500 w-8 h-8" />
+                <SiTypescript className="text-gray-500 w-8 h-8" />
+              </div>
+            </div>
           </div>
         </li>
       </ol>

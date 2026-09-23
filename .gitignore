@@ -8,6 +8,8 @@ yarn.lock
 .vercel
 .output
 .vinxi
+dist
+.netlify
 
 /build/
 /api/

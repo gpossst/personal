@@ -6,7 +6,6 @@ import {
   SiExpo,
   SiTypescript,
   SiGooglegemini,
-  SiOpenai,
   SiDrizzle,
   SiPandas,
   SiPytorch,
@@ -192,7 +191,6 @@ export default function Timeline({
                 <SiDrizzle className="text-gray-500 w-8 h-8" />
                 <SiTypescript className="text-gray-500 w-8 h-8" />
                 <SiGooglegemini className="text-gray-500 w-8 h-8" />
-                <SiOpenai className="text-gray-500 w-8 h-8" />
               </div>
             </div>
             <div>

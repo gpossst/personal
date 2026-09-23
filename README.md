@@ -4,20 +4,48 @@ This site is built with TanStack Router!
 
 - [TanStack Router Docs](https://tanstack.com/router)
 
-It's deployed automagically with Netlify!
+It's deployed as a Docker container on Railway.
 
-- [Netlify](https://netlify.com/)
+- [Railway](https://railway.com/)
 
 ## Development
 
 From your terminal:
 
 ```sh
-pnpm install
-pnpm dev
+bun install
+bun dev
 ```
 
 This starts your app in development mode, rebuilding assets on file changes.
+
+## Build and run
+
+```sh
+bun run build
+bun run start
+```
+
+The build produces a self-contained Nitro server in `.output/`, started with Bun.
+
+## Deploy to Railway (Docker)
+
+The included `Dockerfile` builds the app and serves it with Bun.
+
+1. Push this repo to GitHub.
+2. Create a new project on Railway and deploy from the repo. Railway detects the
+   `Dockerfile` and builds it automatically.
+3. Railway injects `PORT`; the server listens on it (defaults to `3000`).
+
+Build and run the container locally:
+
+```sh
+docker build -t garrett-post .
+docker run -p 3000:3000 garrett-post
+```
+
+> Requires Bun >= 1.4. Older Bun releases cannot parse React DOM's production
+> bundle in the Nitro server output.
 
 ## Editing and previewing the docs of TanStack projects locally
 
@@ -58,9 +86,9 @@ git clone git@github.com:TanStack/form.git
 
 ```sh
 cd tanstack.com
-pnpm i
+bun i
 # The app will run on https://localhost:3000 by default
-pnpm dev
+bun dev
 ```
 
 4. Now you can visit http://localhost:3000/form/latest/docs/overview in the browser and see the changes you make in `tanstack/form/docs`.

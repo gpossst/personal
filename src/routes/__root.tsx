@@ -1,7 +1,6 @@
+/// <reference types="vite/client" />
 import {
   HeadContent,
-  Link,
-  Outlet,
   Scripts,
   createRootRoute,
 } from "@tanstack/react-router";
@@ -62,24 +61,10 @@ export const Route = createRootRoute({
       },
     ],
   }),
-  errorComponent: (props) => {
-    return (
-      <RootDocument>
-        <DefaultCatchBoundary {...props} />
-      </RootDocument>
-    );
-  },
+  errorComponent: DefaultCatchBoundary,
   notFoundComponent: () => <NotFound />,
-  component: RootComponent,
+  shellComponent: RootDocument,
 });
-
-function RootComponent() {
-  return (
-    <RootDocument>
-      <Outlet />
-    </RootDocument>
-  );
-}
 
 function RootDocument({ children }: { children: React.ReactNode }) {
   return (

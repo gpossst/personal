@@ -1,0 +1,15 @@
+# Alder
+
+Alder is an API for getting web content into a shape AI can actually use. Give it a URL and you get clean markdown back, with YouTube links returning transcripts and Reddit getting its own parsing. There's also search, deep-search, and a parse endpoint that searches the web, reads the top pages, and returns JSON matching a schema you hand it. An optional `find` parameter trims a page down to the excerpts most similar to your query, using embeddings over overlapping chunks. All of it is exposed over MCP too.
+
+The API itself is Go, and the dashboard, docs, and billing live in a TanStack Start app. The other half is the marketplace: publishers verify their domains through DNS or a meta tag, developers pay per request, and a share of that usage gets paid out to publishers through Stripe Connect.
+
+To show it off, I built two open-source examples: Sizzle, a recipe generator built on the parse endpoint, and Research Partner, a terminal research assistant that uses Alder's MCP tools.
+
+## Links
+- [Alder](https://alder.so)
+- [Sizzle](https://github.com/gpossst/sizzle)
+- [Research Partner](https://github.com/gpossst/research-partner)
+- Repository is private for now
+
+###  March 2026 to April 2026

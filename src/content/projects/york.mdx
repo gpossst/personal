@@ -1,0 +1,14 @@
+# York
+
+York is a note-taking and knowledge app. You can throw just about anything into it: notes, files, PDFs, webpages, YouTube videos. Everything gets processed and embedded for semantic search, and audio and video get transcribed so a search result can drop you at the exact timestamp you were looking for. Related content can be grouped into pools, each with its own canvas and AI chat, and there's a global chat plus agent tasks that run on a schedule.
+
+It's built on TanStack Start with Postgres and Drizzle, alongside a separate MCP server written in Go. The MCP server lets external assistants like Cursor search your York data and create or edit markdown notes, over either stdio or HTTP.
+
+## Problems
+
+Auth for the MCP server was a saga. I went through a long string of OAuth fixes (one commit is literally "fix: OAuth try 3") trying to get clients like Cursor to cooperate, before ripping OAuth out entirely and switching to API keys sent as bearer tokens.
+
+## Links
+- Repository is private for now
+
+###  December 2025 to March 2026

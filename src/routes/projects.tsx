@@ -7,6 +7,7 @@ import { FaArrowLeft } from "react-icons/fa";
 import { MDXProvider } from "@mdx-js/react";
 import YouTube from "react-youtube";
 import { seo } from "~/utils/seo";
+import { additionalProjects } from "~/data/additional-projects";
 
 export const Route = createFileRoute("/projects")({
   component: RouteComponent,
@@ -52,6 +53,7 @@ const projects = [
     name: "Opentern",
     location: "opentern",
   },
+  ...additionalProjects,
 ];
 
 // Helper function to convert project name to URL-friendly hash

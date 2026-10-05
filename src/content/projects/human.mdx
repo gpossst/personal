@@ -1,0 +1,12 @@
+# Human
+
+A social network built in TanStack Start, with Postgres, Drizzle, and Better Auth underneath. The basics are all there: posts with image and video uploads, likes, follows and a following feed, and threaded comments.
+
+Comments went through a rework partway through. Instead of recursively nesting every reply on the post page, the post shows top-level comments and you drill into a comment's own page, which shows its ancestor chain and direct replies. Deleted comments are soft-deleted and left as tombstones, so the replies underneath them stay put.
+
+Accounts can verify their identity through Stripe Identity. Businesses can subscribe to a paid tier that unlocks a Studio dashboard with post performance, retention, comment sentiment (a simple keyword classifier, nothing fancy), and A/B tests on posts. Users can report business accounts, and admins get a review page that can restrict them. Search only made it as far as a design spec.
+
+## Links
+- Repository is private for now
+
+###  May 2026

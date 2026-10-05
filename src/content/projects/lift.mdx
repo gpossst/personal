@@ -1,0 +1,11 @@
+# Lift
+
+A workout tracker for logging sets, reps, and weight, built local-first. The Expo app writes everything to SQLite on the device, so it works without a connection, then syncs to a Cloudflare Worker backed by D1 once you sign in through Better Auth. Around that are splits (including custom ones), workout history, progress stats, and friends who can see each other's activity.
+
+The recommendations are the interesting part. There's no routine builder; instead, a planner running on the device learns from your history. It balances muscle work across the session and the week, accounts for recent fatigue, weighs recent sessions more heavily, and treats a replaced or skipped suggestion as a vote against it. For progressive overload, it adds 5 lb once every working set hits the top of the rep range and drops the weight after two sessions below it.
+
+## Links
+- [Lift](https://lift.garrett.one)
+- [Repository](https://github.com/gpossst/lift)
+
+###  August 2026 to October 2026

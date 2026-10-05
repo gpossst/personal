@@ -1,0 +1,12 @@
+# Voiced
+
+A voice assistant that can actually do things with your email and calendar. You connect a Google or Microsoft account, then just talk to it. The browser holds a realtime WebRTC session with the model, and when you ask about your inbox, the model makes a tool call (get emails, send an email, get calendar events for a day) that my server runs against the provider. The results get fed back to the model as text, and it answers out loud.
+
+Each connected account gets a nickname like "school" or "work". The model passes that nickname into every tool call, which is how it knows which inbox you're talking about when you have more than one.
+
+The stack is split in three: a Next.js frontend, Convex for storage, and a Go server that handles the OAuth flows, encrypts the stored credentials, and talks to the Google and Microsoft APIs.
+
+## Links
+- [Repository](https://github.com/gpossst/voiced)
+
+###  July 2025 to September 2025

@@ -1,0 +1,14 @@
+# Orbitask
+
+A task manager built around the idea that tasks don't happen in a vacuum. Any task in Orbitask can be marked as a roadblock for another, so a project ends up as a dependency graph instead of a flat list. On top of that are the usual pieces: priorities, due dates, assignees, and a status flow that goes from to-do to in progress to ready for review to done.
+
+Projects can require review before anything is marked done, which is where roles come in. Invite links hand out an admin, reviewer, or member role and can expire after a day, a week, a month, or never. It's all Next.js and Convex, with a graph view that draws the roadblocks as a network of nodes so you can actually see what's blocking what.
+
+## Problems
+
+Three roles meant every mutation had to check who was allowed to do what. Permissions got messy fast, and I ended up going back through the Convex functions to clean up the permission checks and error handling.
+
+## Links
+- Repository is private for now
+
+###  June 2025 to July 2025

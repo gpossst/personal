@@ -10,6 +10,11 @@ import {
   SiPandas,
   SiPytorch,
   SiNumpy,
+  SiConvex,
+  SiGo,
+  SiPostgresql,
+  SiCloudflare,
+  SiSqlite,
 } from "react-icons/si";
 import {
   FaHtml5,
@@ -25,6 +30,58 @@ import {
 } from "react-icons/fa";
 
 import { Terminal } from "lucide-react";
+import { additionalProjects } from "~/data/additional-projects";
+
+const projectTechnologies = {
+  orbitask: [FaReact, SiNextdotjs, SiConvex, SiTypescript],
+  voiced: [FaReact, SiNextdotjs, SiGo, SiConvex],
+  york: [FaReact, SiTypescript, SiPostgresql, SiGo],
+  alder: [FaReact, SiTypescript, SiGo, SiPostgresql],
+  human: [FaReact, SiTypescript, SiDrizzle, SiPostgresql],
+  inkwell: [FaReact, SiTypescript, SiConvex, SiExpo],
+  lift: [SiExpo, FaReact, SiSqlite, SiCloudflare],
+};
+
+function AdditionalProjectCards({
+  year,
+  handleOpenProject,
+}: {
+  year: number;
+  handleOpenProject: (project: string) => void;
+}) {
+  return additionalProjects
+    .filter((project) => project.year === year)
+    .map((project) => (
+      <div key={project.location}>
+        <h3 className="text-lg font-semibold text-red-500">
+          <button
+            type="button"
+            className="flex items-center gap-2 text-left"
+            onClick={() => handleOpenProject(project.name)}
+          >
+            {project.name}
+            {project.location === "lift" || project.location === "inkwell" ? (
+              <FaMobile aria-hidden="true" />
+            ) : (
+              <FaLaptop aria-hidden="true" />
+            )}
+          </button>
+        </h3>
+        <p className="mb-2 max-w-xs text-base font-normal text-gray-500 dark:text-gray-400">
+          {project.description}
+        </p>
+        <div className="flex flex-row gap-2 flex-wrap">
+          {projectTechnologies[project.location].map((Icon, index) => (
+            <Icon
+              key={index}
+              aria-hidden="true"
+              className="text-gray-500 w-6 h-6 md:w-8 md:h-8"
+            />
+          ))}
+        </div>
+      </div>
+    ));
+}
 
 export default function Timeline({
   handleOpenProject,
@@ -256,6 +313,22 @@ export default function Timeline({
                 <SiTypescript className="text-gray-500 w-8 h-8" />
               </div>
             </div>
+            <AdditionalProjectCards
+              year={2025}
+              handleOpenProject={handleOpenProject}
+            />
+          </div>
+        </li>
+        <li className="mb-10 ms-4">
+          <div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
+          <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
+            2026
+          </time>
+          <div className="flex flex-col gap-8 mb-10">
+            <AdditionalProjectCards
+              year={2026}
+              handleOpenProject={handleOpenProject}
+            />
           </div>
         </li>
       </ol>
